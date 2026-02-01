@@ -3250,18 +3250,18 @@ const App = {
     
     init() {
         const s = localStorage;
-        document.getElementById('apiKeyInput').value = s.getItem(STORAGE.API_KEY) || '';
+        document.getElementById('apiKeyInput').value = s.getItem('di_apiKey') || '';
         
         const baseRole = s.getItem(STORAGE.SYSTEM_ROLE) || 'Você é Dual.';
         if(!baseRole.includes("KODUX")) document.getElementById('systemRoleInput').value = baseRole + `\n[SISTEMA KODUX V7.9]\nArquétipos: ${Object.keys(KODUX.ARQUETIPOS).join(', ')}. Use V.E.E.B.`;
         else document.getElementById('systemRoleInput').value = baseRole;
 
-        document.getElementById('inputUserId').value = s.getItem(STORAGE.USER_ID) || 'Viajante';
-        document.getElementById('inputModel').value = s.getItem(STORAGE.MODEL) || 'openai/gpt-oss-20b:free';
+        document.getElementById('inputUserId').value = s.getItem('di_userName') || '';
+        document.getElementById('inputModel').value = s.getItem('di_modelName') || '';
         this.state.isAutoSolar = s.getItem(STORAGE.SOLAR_AUTO) !== 'false';
         
         // CORREÇÃO: Força o modo correto na inicialização
-        if (this.state.isAutoSolar) this.autoByTime(); else this.setMode(s.getItem(STORAGE.SOLAR_MODE) || 'night');
+        if (this.state.isAutoSolar) this.autoByTime(); else this.setMode(s.getItem('di_solarMode') || 'night');
 
         this.indexedDB.loadCustomCSS();
         this.indexedDB.loadBackground();
