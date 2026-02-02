@@ -164,7 +164,21 @@ body{
 .fusion-card.hud .brand-dual{font-size:1.2rem;margin:0}
 .fusion-card.hud .greeting-row{display:none}
 .fusion-card.hud .text-block{flex:unset}
-
+body.field-closed .input-row {
+      z-index: 0;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: 
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        z-index 0s linear 0.3s;
+    }
+    body:not(.field-closed) .input-dock {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
 /* drag handle for hud */
 .drag-handle{
   width:60px;height:5px;background:rgba(255,255,255,0.15);border-radius:10px;
