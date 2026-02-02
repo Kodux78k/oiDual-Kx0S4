@@ -103,7 +103,7 @@ body{
 #snap-zone.active{opacity:1}
 
 /* ========== CENTRAL CONTAINER & FUSION CARD ========== */
-.container{position:absolute;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:center;perspective:1200px;z-index:10}
+.container{position:absolute;inset:0;pointer-events:none;display:flex;align-items:center;justify-content:center;perspective:1200px;z-index:1000}
 .fusion-card{
   pointer-events:auto;
   width:100%; max-width:440px;
@@ -174,7 +174,7 @@ body.field-closed .input-row {
         transform 0.3s ease,
         z-index 0s linear 0.3s;
     }
-    body:not(.field-closed) .input-dock {
+    body:not(.field-closed) .input-row {
       opacity: 1;
       pointer-events: auto;
       transform: translateY(0);
